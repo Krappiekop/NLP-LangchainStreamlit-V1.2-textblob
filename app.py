@@ -1,5 +1,5 @@
 import streamlit as st
-import ntlk_download_utils
+import nltk_download_utils
 from langchain_community.llms import OpenAI as OpenAIModel
 from transformers import pipeline
 from textblob import TextBlob
