@@ -27,12 +27,12 @@ def chat_with_gpt():
 
 # NLP function implementations
 def nlp_summary(text):
-    summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6", framework='pt', from_pt=True)
+    summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6", framework='pt')
     summary = summarizer(text, max_length=50, min_length=25, do_sample=False)
     return summary[0]['summary_text']
 
 def nlp_sentiment(text):
-    sentiment_analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased")
+    sentiment_analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased", framework='pt')
     sentiment = sentiment_analyzer(text)
     return sentiment[0]
 
