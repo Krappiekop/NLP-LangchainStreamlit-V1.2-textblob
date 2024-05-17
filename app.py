@@ -1,15 +1,9 @@
 import streamlit as st
+import ntlk_download_utils
 from langchain_community.llms import OpenAI as OpenAIModel
 from transformers import pipeline
 from textblob import TextBlob
 from textblob.np_extractors import ConllExtractor
-import nltk
-
-# Download necessary NLTK data
-nltk.download('brown')
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('conll2000')
 
 st.title('NLP Application')
 
