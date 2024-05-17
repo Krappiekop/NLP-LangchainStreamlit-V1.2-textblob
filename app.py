@@ -4,6 +4,7 @@ from transformers import pipeline
 from textblob import TextBlob
 from textblob.np_extractors import ConllExtractor
 import nltk
+from pathlib import Path
 
 # Function to download NLTK data if not already present
 def download_nltk_data():
