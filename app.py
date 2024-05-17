@@ -5,6 +5,7 @@ from textblob import TextBlob
 from textblob.np_extractors import ConllExtractor
 import nltk
 
+# Download necessary NLTK data
 nltk.download('brown')
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
@@ -30,16 +31,14 @@ def chat_with_gpt():
         if submitted and openai_api_key.startswith('sk-'):
             generate_response(text)
 
-# Load NLP models
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
-sentiment_analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
-
 # NLP function implementations
 def nlp_summary(text):
+    summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
     summary = summarizer(text, max_length=50, min_length=25, do_sample=False)
     return summary[0]['summary_text']
 
 def nlp_sentiment(text):
+    sentiment_analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased")
     sentiment = sentiment_analyzer(text)
     return sentiment[0]
 
