@@ -4,18 +4,9 @@ from transformers import pipeline
 from textblob import TextBlob
 from textblob.np_extractors import ConllExtractor
 import nltk
-from pathlib import Path
-
-# Function to download NLTK data if not already present
-def download_nltk_data():
-    nltk_data_path = Path(nltk.data.find('')).resolve()
-    required_packages = ['brown', 'punkt', 'averaged_perceptron_tagger', 'conll2000']
-    for package in required_packages:
-        if not (nltk_data_path / package).exists():
-            nltk.download(package)
 
 # Download necessary NLTK data
-download_nltk_data()
+nltk.download('punkt')
 
 st.title('NLP Application')
 
