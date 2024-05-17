@@ -1,6 +1,7 @@
 import streamlit as st
 import nltk_download_utils
-from langchain_community.llms import OpenAI as OpenAIModel
+from langchain_community.llms import OpenAI
+from langchain import OpenAI as OpenAIModel
 from transformers import pipeline
 from textblob import TextBlob
 from textblob.np_extractors import ConllExtractor
