@@ -3,4 +3,4 @@ langchain_community
 transformers
 textblob
 nltk
-tensorflow
+tf-keras
