@@ -1,7 +1,9 @@
 streamlit
+langchain
 langchain_community
 transformers
 textblob
 nltk
 tf-keras
 torch
+openai
